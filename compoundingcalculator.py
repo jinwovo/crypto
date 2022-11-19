@@ -6,7 +6,6 @@ per = int(input("이율 : ")) / 100
 choose = input("일 / 월 / 년 : ")
 
 while choose != "일" or choose != "월" or choose != "년":
-    choose = input("일 / 월 / 년 : ")
     if choose == '일':
         date = int(input("일 수 :"))
         break
@@ -20,8 +19,6 @@ while choose != "일" or choose != "월" or choose != "년":
         print("제대로 된 값을 입력해주세요.")
         continue
 
-
-m = start * ((1 + per) ** date)
-
-
-print(round(m))
+for i in range(date):
+    m = start * ((1 + per) ** i)
+    print(str(i)+"일 : "+str(round(m)))
